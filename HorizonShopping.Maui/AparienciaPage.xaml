@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HorizonShopping.Maui.AparienciaPage"
+    Title="Apariencia">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <!-- TÍTULO -->
+
+            <Label
+                Text="Apariencia"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout
+                Spacing="5">
+
+                <Label
+                    Text="Tema de color"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Selecciona el color de Horizon Shopping"
+                    FontSize="14"
+                    Opacity="0.65" />
+
+            </VerticalStackLayout>
+
+
+            <!-- COLORES -->
+
+            <VerticalStackLayout
+                Spacing="12">
+
+
+                <!-- LILA -->
+
+                <Grid
+                    ColumnDefinitions="45,*,Auto"
+                    Padding="12,8"
+                    MinimumHeightRequest="55">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnLilaClicked" />
+                    </Grid.GestureRecognizers>
+
+                    <Image
+                        Source="themeconfig_lila.svg"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Predeterminado"
+                        FontSize="17"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="tickLila"
+                        Grid.Column="2"
+                        Text="✓"
+                        TextColor="Green"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        IsVisible="False"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+
+                <!-- ROJO -->
+
+                <Grid
+                    ColumnDefinitions="45,*,Auto"
+                    Padding="12,8"
+                    MinimumHeightRequest="55">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnRojoClicked" />
+                    </Grid.GestureRecognizers>
+
+                    <Image
+                        Source="themeconfig_rojo.svg"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Rojo"
+                        FontSize="17"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="tickRojo"
+                        Grid.Column="2"
+                        Text="✓"
+                        TextColor="Green"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        IsVisible="False"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+
+                <!-- VERDE -->
+
+                <Grid
+                    ColumnDefinitions="45,*,Auto"
+                    Padding="12,8"
+                    MinimumHeightRequest="55">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnVerdeClicked" />
+                    </Grid.GestureRecognizers>
+
+                    <Image
+                        Source="themeconfig_verde.svg"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Verde"
+                        FontSize="17"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="tickVerde"
+                        Grid.Column="2"
+                        Text="✓"
+                        TextColor="Green"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        IsVisible="False"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+
+                <!-- ROSA -->
+
+                <Grid
+                    ColumnDefinitions="45,*,Auto"
+                    Padding="12,8"
+                    MinimumHeightRequest="55">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnRosaClicked" />
+                    </Grid.GestureRecognizers>
+
+                    <Image
+                        Source="themeconfig_rosa.svg"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Rosa"
+                        FontSize="17"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="tickRosa"
+                        Grid.Column="2"
+                        Text="✓"
+                        TextColor="Green"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        IsVisible="False"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+
+                <!-- AMARILLO -->
+
+                <Grid
+                    ColumnDefinitions="45,*,Auto"
+                    Padding="12,8"
+                    MinimumHeightRequest="55">
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnAmarilloClicked" />
+                    </Grid.GestureRecognizers>
+
+                    <Image
+                        Source="themeconfig_amarillo.svg"
+                        WidthRequest="28"
+                        HeightRequest="28"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="Amarillo"
+                        FontSize="17"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="tickAmarillo"
+                        Grid.Column="2"
+                        Text="✓"
+                        TextColor="Green"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        IsVisible="False"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

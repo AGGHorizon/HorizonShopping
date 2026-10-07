@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HorizonShopping.Maui.SincronizacionPage"
+    Title="Vinculación">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <Label
+                Text="Vinculación"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10" />
+
+
+            <!-- ESTADO DE SINCRONIZACIÓN -->
+
+            <Border
+                StrokeThickness="1"
+                Padding="15">
+
+                <Grid
+                    ColumnDefinitions="Auto,*"
+                    ColumnSpacing="12">
+
+                    <!-- PILOTO -->
+
+                    <Border
+                        x:Name="brdEstado"
+                        Grid.Column="0"
+                        WidthRequest="18"
+                        HeightRequest="18"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 9"
+                        BackgroundColor="Gray"
+                        VerticalOptions="Center" />
+
+                    <!-- TEXTO -->
+
+                    <VerticalStackLayout
+                        Grid.Column="1"
+                        Spacing="2">
+
+                        <Label
+                            Text="Estado de sincronización"
+                            FontSize="16"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            x:Name="lblEstadoSincronizacion"
+                            Text="Comprobando..."
+                            FontSize="14"
+                            Opacity="0.7" />
+
+                    </VerticalStackLayout>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- ESTE DISPOSITIVO -->
+
+            <Label
+                Text="Este dispositivo"
+                FontSize="22"
+                FontAttributes="Bold" />
+
+            <Border
+                StrokeThickness="1"
+                Padding="15">
+
+                <VerticalStackLayout
+                    Spacing="12">
+
+                    <Label
+                        Text="Comparte este código con el otro dispositivo:"
+                        FontSize="16" />
+
+                    <Label
+                        x:Name="lblCodigo"
+                        Text="------"
+                        FontSize="36"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        CharacterSpacing="5" />
+
+                    <Label
+                        x:Name="lblExpiracion"
+                        Text="El código caduca en 10 minutos."
+                        FontSize="14"
+                        TextColor="Gray"
+                        HorizontalOptions="Center" />
+
+                    <Button
+                        Text="Generar código"
+                        Clicked="OnGenerarCodigoClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- OTRO DISPOSITIVO -->
+
+            <Label
+                Text="Otro dispositivo"
+                FontSize="22"
+                FontAttributes="Bold"
+                Margin="0,20,0,0" />
+
+            <Border
+                StrokeThickness="1"
+                Padding="15">
+
+                <VerticalStackLayout
+                    Spacing="12">
+
+                    <Label
+                        Text="Introduce el código que aparece en el otro dispositivo:"
+                        FontSize="16" />
+
+                    <Entry
+                        x:Name="txtCodigo"
+                        Placeholder="Código de 6 cifras"
+                        Keyboard="Numeric"
+                        MaxLength="6"
+                        HorizontalTextAlignment="Center"
+                        FontSize="24" />
+
+                    <Button
+                        Text="Vincular dispositivo"
+                        Clicked="OnVincularClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- DESVINCULACIÓN -->
+
+            <Label
+                Text="Dispositivo actual"
+                FontSize="22"
+                FontAttributes="Bold"
+                Margin="0,20,0,0" />
+
+            <Border
+                StrokeThickness="1"
+                Padding="15">
+
+                <VerticalStackLayout
+                    Spacing="10">
+
+                    <Label
+                        Text="Puedes dejar de compartir esta lista. Los demás dispositivos vinculados no se verán afectados."
+                        FontSize="15" />
+
+                    <Button
+                        Text="Dejar de vincular"
+                        Clicked="OnDejarDeVincularClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

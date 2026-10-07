@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Name="mainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:HorizonShopping.Maui.Converters"
+    x:Class="HorizonShopping.Maui.MainPage"
+    Title="Horizon Shopping">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <converters:ProductIconConverter
+                x:Key="ProductIconConverter" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        RowDefinitions="Auto,Auto,Auto,*"
+        Padding="20"
+        RowSpacing="15">
+
+        <!-- CABECERA -->
+        <Grid
+            Grid.Row="0"
+            ColumnDefinitions="*,Auto">
+
+            <Button
+                Grid.Column="1"
+                ImageSource="icon_config.svg"
+                WidthRequest="40"
+                HeightRequest="40"
+                Padding="6"
+                BackgroundColor="Transparent"
+                Clicked="OnAbrirConfiguracionClicked" />
+
+        </Grid>
+
+        <!-- LOGO -->
+        <Image
+            Grid.Row="1"
+            x:Name="logoHorizon"
+            HeightRequest="125"
+            Aspect="AspectFit"
+            HorizontalOptions="Center" />
+
+        <!-- SECCIONES -->
+        <ScrollView
+            Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalScrollBarVisibility="Never">
+
+            <HorizontalStackLayout
+                Spacing="8">
+
+                <HorizontalStackLayout
+                    x:Name="barraSecciones"
+                    Spacing="8">
+                </HorizontalStackLayout>
+
+                <!-- AÑADIR SECCIÓN -->
+                <Button
+                    x:Name="btnAñadirSeccion"
+                    Text="+"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Clicked="OnAñadirSeccionClicked"
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    CornerRadius="22"
+                    BackgroundColor="{DynamicResource ColorPrincipal}"
+                    TextColor="{DynamicResource ColorTextoBoton}" />
+
+            </HorizontalStackLayout>
+
+        </ScrollView>
+
+        <!-- ZONA DESPLAZABLE -->
+        <CollectionView
+            Grid.Row="3"
+            x:Name="listaProductos"
+            IsGrouped="True">
+
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+
+                    <Label
+                        Text="{Binding Seccion}"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        Padding="5,20,5,5" />
+
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Border
+                        Margin="5,1"
+                        Padding="6,4"
+                        StrokeThickness="0">
+
+                        <Grid
+                            ColumnDefinitions="Auto,*,Auto,Auto,Auto"
+                            ColumnSpacing="8">
+
+                            <!-- ICONO -->
+                            <Image
+                                Source="{Binding Nombre, Converter={StaticResource ProductIconConverter}}"
+                                WidthRequest="28"
+                                HeightRequest="28"
+                                VerticalOptions="Center" />
+
+                            <!-- NOMBRE -->
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Nombre}"
+                                FontSize="16"
+                                VerticalOptions="Center" />
+
+                            <!-- CANTIDAD -->
+                            <Label
+                                Grid.Column="2"
+                                Text="{Binding Cantidad, StringFormat='x{0}'}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center" />
+
+                            <!-- EDITAR -->
+                            <Button
+                                Grid.Column="3"
+                                Text="✎"
+                                FontSize="16"
+                                WidthRequest="34"
+                                HeightRequest="34"
+                                Padding="0"
+                                CornerRadius="10"
+                                Clicked="OnEditarProductoClicked"
+                                BackgroundColor="{Binding Source={x:Reference mainPage}, Path=ColorPrincipal}"
+                                TextColor="White" />
+
+                            <!-- BORRAR -->
+                            <Button
+                                Grid.Column="4"
+                                Text="×"
+                                FontSize="19"
+                                FontAttributes="Bold"
+                                WidthRequest="34"
+                                HeightRequest="34"
+                                Padding="0"
+                                CornerRadius="10"
+                                Clicked="OnBorrarProductoClicked"
+                                BackgroundColor="{Binding Source={x:Reference mainPage}, Path=ColorPrincipal}"
+                                TextColor="White" />
+
+                        </Grid>
+
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <!-- BOTONES AL FINAL DE LA LISTA -->
+            <CollectionView.Footer>
+
+                <VerticalStackLayout
+                    Spacing="12"
+                    Padding="0,20,0,15">
+
+                    <!-- AÑADIR PRODUCTO -->
+                    <Button
+                        x:Name="btnAñadirProducto"
+                        Text="＋  Añadir producto"
+                        Clicked="OnAbrirAñadirProductoClicked"
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        HeightRequest="52"
+                        CornerRadius="14"
+                        BackgroundColor="Transparent"
+                        TextColor="{DynamicResource ColorTextoBoton}" />
+
+                    <!-- FINALIZAR COMPRA -->
+                    <Button
+                        x:Name="btnFinalizarCompra"
+                        Text="✓  Finalizar compra"
+                        Clicked="OnFinalizarCompraClicked"
+                        FontSize="17"
+                        FontAttributes="Bold"
+                        HeightRequest="52"
+                        CornerRadius="14"
+                        BackgroundColor="Transparent"
+                        TextColor="{DynamicResource ColorTextoBoton}" />
+
+                </VerticalStackLayout>
+
+            </CollectionView.Footer>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

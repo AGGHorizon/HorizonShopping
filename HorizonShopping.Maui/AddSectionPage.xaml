@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HorizonShopping.Maui.AddSectionPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Añadir sección">
+
+    <VerticalStackLayout
+        Padding="25"
+        Spacing="15">
+
+        <Label
+            Text="Nueva sección"
+            FontSize="24"
+            FontAttributes="Bold" />
+
+        <Entry
+            x:Name="txtNombre"
+            Placeholder="Nombre de la sección" />
+
+        <Button
+            Text="Añadir sección"
+            Clicked="OnAñadirSeccionClicked"
+            FontSize="16"
+            FontAttributes="Bold" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

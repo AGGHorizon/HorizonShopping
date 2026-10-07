@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HorizonShopping.Maui.AddProductPage"
+    Title="Añadir productos">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <!-- TÍTULO -->
+            <Label
+                Text="Añadir productos"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10" />
+
+
+            <!-- SECCIÓN -->
+            <Label
+                Text="Sección"
+                FontSize="18" />
+
+            <Picker
+                x:Name="cmbSeccion"
+                Title="Selecciona una sección" />
+
+
+            <!-- PRODUCTOS -->
+            <Label
+                Text="Productos"
+                FontSize="18"
+                Margin="0,10,0,0" />
+
+            <!-- Aquí aparecerán las filas de productos -->
+            <VerticalStackLayout
+                x:Name="listaEntradas"
+                Spacing="10" />
+
+            <!-- AÑADIR OTRO PRODUCTO -->
+            <Button
+                Text="+ Añadir otro producto"
+                Clicked="OnAñadirOtroProductoClicked"
+                BackgroundColor="Transparent"
+                TextColor="{DynamicResource ColorPrincipal}"
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="Center"
+                HeightRequest="45"
+                Padding="15,8" />
+
+            <!-- AÑADIR TODOS -->
+            <Button
+                Text="Añadir productos"
+                Clicked="OnAñadirProductosClicked"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="{DynamicResource ColorPrincipal}"
+                TextColor="{DynamicResource ColorTextoBoton}" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

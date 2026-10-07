@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HorizonShopping.Maui.AcercaDePage"
+    Title="Acerca de">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <!-- TÍTULO -->
+
+            <Label
+                Text="Acerca de Horizon Shopping"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10" />
+
+
+            <!-- LOGO -->
+
+            <Image
+                Source="logohorizonshopping_lila.png"
+                HeightRequest="150"
+                Aspect="AspectFit"
+                HorizontalOptions="Center" />
+
+
+            <!-- NOMBRE -->
+
+            <Label
+                Text="Horizon Shopping"
+                FontSize="22"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Tu lista de la compra, sencilla y organizada."
+                FontSize="16"
+                HorizontalTextAlignment="Center"
+                Opacity="0.7" />
+
+
+            <!-- INFORMACIÓN -->
+
+            <VerticalStackLayout
+                Spacing="8"
+                Margin="0,15,0,0">
+
+                <Label
+                    Text="Información"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <VerticalStackLayout
+                    Spacing="12">
+
+                    <Label
+                        Text="Este proyecto está siendo desarrollado como parte de mi aprendizaje en Desarrollo de Aplicaciones Web (DAW) y representa uno de mis primeros proyectos personales utilizando C# y .NET MAUI."
+                        FontSize="15"
+                        LineBreakMode="WordWrap" />
+
+                    <Label
+                        Text="Más que una aplicación terminada, Horizon Shopping es también un proyecto de aprendizaje y evolución. Cada nueva versión incorpora nuevos conocimientos, mejoras y funcionalidades desarrolladas durante el proceso."
+                        FontSize="15"
+                        LineBreakMode="WordWrap" />     
+
+                    <Label
+                        Text="El objetivo es seguir haciendo crecer la aplicación hasta convertirla en un proyecto cada vez más completo, práctico y profesional."
+                        FontSize="15"
+                        LineBreakMode="WordWrap" />
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+
+            <!-- VERSIÓN -->
+
+            <VerticalStackLayout
+                Spacing="5"
+                Margin="0,10,0,0">
+
+                <Label
+                    Text="Versión"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Horizon Shopping 1.0"
+                    FontSize="15"
+                    Opacity="0.7" />
+
+            </VerticalStackLayout>
+
+
+            <!-- DESARROLLADO POR -->
+
+            <VerticalStackLayout
+                Spacing="5"
+                Margin="0,10,0,0">
+
+                <Label
+                    Text="Desarrollado por"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="AGG Horizon"
+                    FontSize="18"/>
+
+                <Label
+                    Text="Antonio Gómez García"
+                    FontSize="17"/>
+
+                <Image
+                    Source="logohorizonagg.png"
+                    HeightRequest="250"
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

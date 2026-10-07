@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HorizonShopping.Maui.ConfiguracionPage"
+    Title="Configuración">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="10">
+
+            <!-- TÍTULO -->
+
+            <Label
+                Text="Configuración"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20" />
+
+
+            <!-- APARIENCIA -->
+
+            <Grid
+                Padding="15,12"
+                MinimumHeightRequest="60">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnAparienciaClicked" />
+                </Grid.GestureRecognizers>
+
+                <VerticalStackLayout
+                    Spacing="3">
+
+                    <Label
+                        Text="Apariencia"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="Personaliza los colores de Horizon Shopping"
+                        FontSize="14"
+                        Opacity="0.65" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+
+            <!-- ACERCA DE -->
+
+            <Grid
+                Padding="15,12"
+                MinimumHeightRequest="60">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnAcercaDeClicked" />
+                </Grid.GestureRecognizers>
+
+                <VerticalStackLayout
+                    Spacing="3">
+
+                    <Label
+                        Text="Acerca de Horizon Shopping"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="Información sobre la aplicación"
+                        FontSize="14"
+                        Opacity="0.65" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+
+            <!-- SINCRONIZACIÓN -->
+
+            <Grid
+                Padding="15,12"
+                MinimumHeightRequest="60">
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnSincronizacionClicked" />
+                </Grid.GestureRecognizers>
+
+                <VerticalStackLayout
+                    Spacing="3">
+
+                    <Label
+                        Text="Sincronización"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="Sincroniza tu lista con otros dispositivos"
+                        FontSize="14"
+                        Opacity="0.65" />
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
