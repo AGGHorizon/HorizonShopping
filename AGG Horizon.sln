@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizonShopping.WinForms", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizonShopping.Maui", "HorizonShopping.Maui\HorizonShopping.Maui.csproj", "{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,7 @@ Global
 		{AEBA80C2-5ACD-4CB3-825F-A7566FC7EA2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
