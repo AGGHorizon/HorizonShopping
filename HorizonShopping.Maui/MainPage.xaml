@@ -18,15 +18,28 @@
     </ContentPage.Resources>
 
     <Grid
-        RowDefinitions="Auto,Auto,Auto,*"
+        RowDefinitions="Auto,Auto,*"
         Padding="20"
         RowSpacing="15">
 
-        <!-- CABECERA -->
+
+        <!-- CABECERA Y LOGO -->
         <Grid
             Grid.Row="0"
-            ColumnDefinitions="*,Auto">
+            ColumnDefinitions="*,Auto"
+            ColumnSpacing="0"
+            HeightRequest="90">
 
+            <!-- LOGO -->
+            <Image
+                x:Name="logoHorizon"
+                HeightRequest="90"
+                WidthRequest="180"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <!-- CONFIGURACIÓN -->
             <Button
                 Grid.Column="1"
                 ImageSource="icon_config.svg"
@@ -34,21 +47,15 @@
                 HeightRequest="40"
                 Padding="6"
                 BackgroundColor="Transparent"
+                VerticalOptions="Start"
                 Clicked="OnAbrirConfiguracionClicked" />
 
         </Grid>
 
-        <!-- LOGO -->
-        <Image
-            Grid.Row="1"
-            x:Name="logoHorizon"
-            HeightRequest="125"
-            Aspect="AspectFit"
-            HorizontalOptions="Center" />
 
         <!-- SECCIONES -->
         <ScrollView
-            Grid.Row="2"
+            Grid.Row="1"
             Orientation="Horizontal"
             HorizontalScrollBarVisibility="Never">
 
@@ -79,7 +86,7 @@
 
         <!-- ZONA DESPLAZABLE -->
         <CollectionView
-            Grid.Row="3"
+            Grid.Row="2"
             x:Name="listaProductos"
             IsGrouped="True">
 

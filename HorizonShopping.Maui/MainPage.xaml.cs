@@ -80,7 +80,7 @@ namespace HorizonShopping.Maui
 
             _temporizadorSincronizacion.Tick += TemporizadorSincronizacion_Tick;
 
-            _temporizadorSincronizacion.Start();
+            _temporizadorSincronizacion.Start();       
         }
 
         private void DetenerTemporizadorSincronizacion()

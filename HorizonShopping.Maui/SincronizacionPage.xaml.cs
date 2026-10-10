@@ -123,7 +123,7 @@ public partial class SincronizacionPage : ContentPage
     {
         string codigo = txtCodigo.Text?.Trim() ?? string.Empty;
 
-        if (codigo.Length != 6 || codigo.All(char.IsDigit))
+        if (codigo.Length != 6 || !codigo.All(char.IsDigit))
         {
             await DisplayAlert(
                 "Código incorrecto",

@@ -110,6 +110,12 @@ public partial class AddProductPage : ContentPage
         };
 
         listaEntradas.Children.Add(fila);
+
+        MainThread.BeginInvokeOnMainThread(async () =>
+        {
+            await Task.Delay(100);
+            txtNombre.Focus();
+        });
     }
 
     //GUARDADO DE PRODUCTOS

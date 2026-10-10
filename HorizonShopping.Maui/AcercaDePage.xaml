@@ -16,7 +16,7 @@
 
             <Label
                 Text="Acerca de Horizon Shopping"
-                FontSize="28"
+                FontSize="23"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 Margin="0,0,0,10" />
@@ -32,12 +32,6 @@
 
 
             <!-- NOMBRE -->
-
-            <Label
-                Text="Horizon Shopping"
-                FontSize="22"
-                FontAttributes="Bold"
-                HorizontalOptions="Center" />
 
             <Label
                 Text="Tu lista de la compra, sencilla y organizada."

@@ -95,7 +95,6 @@ public partial class EditProductPage : ContentPage, IQueryAttributable
                 return;
             }
 
-     
             _controller.ModificarProducto(_producto, nombre, cantidad, seccion.Id);
 
             _controller.Guardar();

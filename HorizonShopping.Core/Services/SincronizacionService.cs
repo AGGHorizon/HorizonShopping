@@ -51,8 +51,7 @@ namespace HorizonShopping.Core.Services
             }
 
             
-            // SECCIONES LOCALES -> SUPABASE
-            
+            // SECCIONES LOCALES -> SUPABASE            
 
             foreach (SeccionModel local in seccionesLocales)
             {
@@ -94,7 +93,7 @@ namespace HorizonShopping.Core.Services
                     huboCambios = true;
                 }
 
-                if (local.UpdatedAt > remoto.UpdatedAt)
+                if (local.UpdatedAt.ToUniversalTime() > remoto.UpdatedAt.ToUniversalTime())
                 {
                     await _seccionRepository.GuardarSeccionAsync(lista.Id, local);
 
@@ -106,7 +105,7 @@ namespace HorizonShopping.Core.Services
                     continue;
                 }
 
-                if (remoto.UpdatedAt > local.UpdatedAt)
+                if (remoto.UpdatedAt.ToUniversalTime() > local.UpdatedAt.ToUniversalTime())
                 {
                     SeccionModel importada = _seccionRepository.ConvertirASeccion(remoto);
 
@@ -126,8 +125,7 @@ namespace HorizonShopping.Core.Services
             }
 
            
-            // PRODUCTOS LOCALES -> SUPABASE
-         
+            // PRODUCTOS LOCALES -> SUPABASE         
 
             seccionesRemotas = await _seccionRepository.ObtenerSeccionesAsync(lista.Id);
 
@@ -146,8 +144,9 @@ namespace HorizonShopping.Core.Services
 
                     continue;
                 }
+               
 
-                if (local.UpdatedAt > remoto.UpdatedAt)
+                if (local.UpdatedAt.ToUniversalTime() > remoto.UpdatedAt.ToUniversalTime())
                 {
                     await _productoRepository.GuardarProductoAsync(local);
 
@@ -158,23 +157,26 @@ namespace HorizonShopping.Core.Services
 
                     continue;
                 }
-
-                if (remoto.UpdatedAt > local.UpdatedAt)
+                
+                if (remoto.UpdatedAt.ToUniversalTime() > local.UpdatedAt.ToUniversalTime())
                 {
                     Producto importado = _productoRepository.ConvertirAProducto(remoto);
 
                     _controller.ImportarProducto(importado);
 
-                    huboCambios = true;
+                    huboCambios = true;                
+
 
                     if (remoto.DeletedAt.HasValue)
                     {
-                        await _supabaseService.ConfirmarEliminacionAsync(lista.Id, "producto", remoto.Id);
+                        await _supabaseService.ConfirmarEliminacionAsync(
+                            lista.Id,"producto",remoto.Id);
                     }
                 }
                 else if (remoto.DeletedAt.HasValue)
                 {
-                    await _supabaseService.ConfirmarEliminacionAsync(lista.Id, "producto", remoto.Id);
+                    await _supabaseService.ConfirmarEliminacionAsync(
+                        lista.Id,"producto",remoto.Id);
                 }
             }
 
