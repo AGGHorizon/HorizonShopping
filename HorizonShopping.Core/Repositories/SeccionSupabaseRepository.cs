@@ -38,14 +38,21 @@ namespace HorizonShopping.Core.Repositories
 
             var resultado = await _supabaseService.Cliente.From<SeccionSupabase>().Where(x => x.Id == seccion.Id).Get();
 
+            /*
             if (resultado.Models.Count == 0)
             {
-                await _supabaseService.Cliente.From<SeccionSupabase>().Insert(seccionSupabase);
+                //CAMBIO INSERT POR UPSERT******************
+                await _supabaseService.Cliente.From<SeccionSupabase>().Upsert(seccionSupabase);
             }
             else
             {
                 await _supabaseService.Cliente.From<SeccionSupabase>().Where(x => x.Id == seccion.Id).Update(seccionSupabase);
             }
+            */
+
+            //CODIGO DE SUSTITUCION DE PRUEBA ->
+            await _supabaseService.Cliente.From<SeccionSupabase>().Upsert(seccionSupabase);
+            //*************************************
 
             return seccionSupabase;
         }

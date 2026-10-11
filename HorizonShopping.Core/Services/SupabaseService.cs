@@ -349,6 +349,31 @@ namespace HorizonShopping.Core.Services
                         UltimoAcceso = DateTime.UtcNow
                 };
 
+                //PRUEBAAAAAAAAAAAAAAAAAAAAA
+                System.Diagnostics.Debug.WriteLine(
+                    "USUARIO ACTUAL: " + ObtenerUsuarioId());
+
+                System.Diagnostics.Debug.WriteLine(
+                    "USUARIO SESIÓN: " + (_client.Auth.CurrentUser?.Id ?? "NULL"));
+
+                System.Diagnostics.Debug.WriteLine(
+                    "ES ANÓNIMO: " + (_client.Auth.CurrentUser?.IsAnonymous.ToString() ?? "NULL"));
+
+
+                System.Diagnostics.Debug.WriteLine(
+                    "ID DEL DISPOSITIVO A INSERTAR: " + nuevoDispositivo.Id);
+
+                System.Diagnostics.Debug.WriteLine(
+                    "ID DE LA SESIÓN ACTUAL: " + ObtenerUsuarioId());
+
+                System.Diagnostics.Debug.WriteLine(
+                    "LISTA DEL DISPOSITIVO: " +
+                    (nuevoDispositivo.ListaId?.ToString() ?? "NULL"));
+                //************************************
+
+
+
+
                 await _client.From<DispositivoSupabase>().Insert(nuevoDispositivo);
             }
 

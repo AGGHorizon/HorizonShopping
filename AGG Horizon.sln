@@ -10,6 +10,32 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizonShopping.Maui", "HorizonShopping.Maui\HorizonShopping.Maui.csproj", "{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\ARQUITECTURA.md = Documentation\ARQUITECTURA.md
+		Documentation\CHANGELOG.md = Documentation\CHANGELOG.md
+		Documentation\IDEAS.md = Documentation\IDEAS.md
+		Documentation\README.md = Documentation\README.md
+		Documentation\ROADMAP.md = Documentation\ROADMAP.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Issues", "Issues", "{0A2D820E-FA0B-40BB-AFD5-210511539BBD}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Issues\ISSUE-001 Pantalla Inicio.md = Documentation\Issues\ISSUE-001 Pantalla Inicio.md
+		Documentation\Issues\ISSUE-002 Confirmación al finalizar compra.md = Documentation\Issues\ISSUE-002 Confirmación al finalizar compra.md
+		Documentation\Issues\ISSUE-003 Introducción del ShoppingController.md = Documentation\Issues\ISSUE-003 Introducción del ShoppingController.md
+		Documentation\Issues\ISSUE-004 Centralizar lógica de negocio en ShoppingController.md = Documentation\Issues\ISSUE-004 Centralizar lógica de negocio en ShoppingController.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Refactors", "Refactors", "{E2BCAC1B-7ADA-4382-B7AC-EDE8E868A9C2}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Refactors\REF-001 Eliminar los strings mágicos de las secciones.md = Documentation\Refactors\REF-001 Eliminar los strings mágicos de las secciones.md
+		Documentation\Refactors\REF-002 Centralizar la obtención de secciones.md = Documentation\Refactors\REF-002 Centralizar la obtención de secciones.md
+		Documentation\Refactors\REF-003 Eliminar la duplicación de los botones de filtrado.md = Documentation\Refactors\REF-003 Eliminar la duplicación de los botones de filtrado.md
+		Documentation\Refactors\REF-004 Eliminar la duplicación al cargar productos.md = Documentation\Refactors\REF-004 Eliminar la duplicación al cargar productos.md
+		Documentation\Refactors\REF-005 Introducción de ShoppingController.md = Documentation\Refactors\REF-005 Introducción de ShoppingController.md
+		Documentation\Refactors\REF-006 Reducir las responsabilidades de los formularios.md = Documentation\Refactors\REF-006 Reducir las responsabilidades de los formularios.md
+		Documentation\Refactors\REF-007 Centralizar la gestión de la configuración.md = Documentation\Refactors\REF-007 Centralizar la gestión de la configuración.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,9 +56,14 @@ Global
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0496B4D2-A5CB-4E06-A297-01CCBDCCF1A7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A2D820E-FA0B-40BB-AFD5-210511539BBD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E2BCAC1B-7ADA-4382-B7AC-EDE8E868A9C2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED4B765C-ABEC-40B1-AC62-098BAC1BD1C9}

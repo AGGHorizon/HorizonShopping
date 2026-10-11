@@ -67,10 +67,31 @@ namespace HorizonShopping.Core.Services
                     if (local.DeletedAt.HasValue)
                         continue;
 
-                    await _seccionRepository.GuardarSeccionAsync(lista.Id, local);
+                    // La sección no existe en la lista remota actual.
+                    // Le asignamos una identidad nueva para esta lista.
+                    Guid idAnterior = local.Id;
+                    local.Id = Guid.NewGuid();
+                    local.UpdatedAt = DateTime.UtcNow;
+
+                    // Actualizamos las referencias de sus productos.
+                    foreach (Producto producto in productosLocales)
+                    {
+                        if (producto.SeccionId == idAnterior)
+                        {
+                            producto.SeccionId = local.Id;
+                            producto.UpdatedAt = DateTime.UtcNow;
+                        }
+                    }
+
+                    // Persistimos el cambio antes de intentar subirlo.
+                    _seccionController.Guardar();
+                    _controller.Guardar();
+
+                    await _seccionRepository.GuardarSeccionAsync(lista.Id,local);
 
                     continue;
                 }
+
 
                 // Si la sección existe remotamente pero tiene otro ID,
                 // usamos el ID remoto para mantener una única identidad.
@@ -140,11 +161,27 @@ namespace HorizonShopping.Core.Services
                     if (local.DeletedAt.HasValue)
                         continue;
 
+                    // Comprobamos que la sección pertenece a la lista actual.
+                    bool seccionValida = seccionesRemotas.Any(s =>
+                        s.Id == local.SeccionId &&
+                        s.DeletedAt is null);
+
+                    if (!seccionValida)
+                    {
+                        throw new InvalidOperationException(
+                            $"No se puede sincronizar el producto '{local.Nombre}': " +
+                            $"su sección {local.SeccionId} no existe en la lista actual.");
+                    }
+
+                    // Conservamos el ID original del producto.
+                    // No generamos uno nuevo en cada sincronización.
                     await _productoRepository.GuardarProductoAsync(local);
+
+                    huboCambios = true;
 
                     continue;
                 }
-               
+
 
                 if (local.UpdatedAt.ToUniversalTime() > remoto.UpdatedAt.ToUniversalTime())
                 {
