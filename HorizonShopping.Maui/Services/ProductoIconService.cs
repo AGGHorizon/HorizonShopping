@@ -46,12 +46,16 @@ public static class ProductoIconService
         { "zanahoria", "icon_zanahoria.svg" },
         { "judía", "icon_judia.svg" },
         { "judia", "icon_judia.svg" },
+        { "ñora" , "icon_nyora.svg" },
 
         // Lácteos
         { "leche", "icon_leche.svg" },
         { "yogur", "icon_leche.svg" },
         { "yogurt", "icon_leche.svg" },
         { "queso", "icon_queso.svg" },
+        { "mahonesa", "icon_mahonesa.svg" },
+        { "mayonesa", "icon_mahonesa.svg" },
+
 
         // Panadería y cereales
         { "pan", "icon_pan.svg" },
@@ -123,8 +127,8 @@ public static class ProductoIconService
         { "cava", "icon_bebida_fiesta_champagne.svg" },
         { "café", "icon_bebida.svg" },
         { "cafe", "icon_bebida.svg" },
-        { "té", "icon_te.svg" },
-        { "te", "icon_te.svg" },
+        { "té", "icon_tee.svg" },
+        { "te", "icon_tee.svg" },
         { "infusión", "icon_infusion.svg" },
         { "infusion", "icon_infusion.svg" },
 
@@ -177,9 +181,18 @@ public static class ProductoIconService
         { "gel", "icon_suavizante_champu_gel_jabon.svg" },
         { "jabon", "icon_suavizante_champu_gel_jabon.svg" },
         { "papel", "icon_papel.svg" },
+        { "gasas", "icon_papel.svg" },
         { "tijera", "icon_tijera.svg" },
+        { "pasta de dientes", "icon_pasta_dientes_cepillo.svg" },
+        { "dentífrico", "icon_pasta_dientes_cepillo.svg" },
+        { "dentifrico", "icon_pasta_dientes_cepillo.svg" },
         { "dientes", "icon_pasta_dientes_cepillo.svg" },
+        { "cepillo dental", "icon_pasta_dientes_cepillo.svg" },
+        { "cepillo de dientes", "icon_pasta_dientes_cepillo.svg" },
         { "cepillo", "icon_pasta_dientes_cepillo.svg" },
+        { "servilletas" , "icon_servis.svg" },
+        { "llaves" , "icon_llaves.svg" },
+        { "vaso" , "icon_vaso.svg" },
 
     };
 
@@ -190,10 +203,15 @@ public static class ProductoIconService
 
         string nombre = nombreProducto.Trim().ToLowerInvariant();
 
-        foreach (var icono in Iconos)
+        foreach (var icono in Iconos.OrderByDescending(x => x.Key.Length))
         {
             if (nombre.Contains(icono.Key))
+            {
+                System.Diagnostics.Debug.WriteLine(
+                    $"Producto: {nombre} | Icono: {icono.Value}");
+
                 return icono.Value;
+            }
         }
 
         return "icon_product.svg";
